@@ -1,0 +1,38 @@
+<div>
+  <h2>{{name}}</h2>
+
+  {{#if name-url}}
+  <p>
+    <a href="{{name-url}}" target="_blank">{{name-url}}</a>
+  </p>
+  {{/if}}
+
+  <table class="field-list">
+  </table>
+
+  {{#if fields}}
+  <h3>{{t 'field-fields'}}</h3>
+  <table>
+    {{#key_value fields}}
+    <tr>
+      <td class="heading">{{key}}</td>
+      <td class="monospace">{{value}}</td>
+    </tr>
+    {{/key_value}}
+  </table>
+  {{/if}}
+
+  {{#if attachments}}
+  <h3>{{t 'field-attachments'}}</h3>
+  <ul>
+    {{#key_value attachments}}
+      <li><a href="#!/attachment/{{key}}/{{value}}">{{key}}</a></li>
+    {{/key_value}}
+  </ul>
+  {{/if}}
+
+  {{#if note}}
+  <h3>{{t 'field-note'}}</h3>
+  {{note}}
+  {{/if}}
+</div>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+    <title>Cryptobox</title>
+
+
+    <link rel="shortcut icon" type="image/png" href="icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="extern/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="extern/bootstrap/css/bootstrap-responsive.css" />
+
+    <script src="extern/jquery/jquery.js"></script>
+    <script src="extern/handlebars/handlebars.runtime.js"></script>
+    <script src="extern/bootstrap/js/bootstrap.js"></script>
+
+    <script src="extern/backbone/underscore.js"></script>
+    <script src="extern/backbone/backbone.js"></script>
+
+    <script src="extern/dropbox-js/dropbox.js"></script>
+
+    <script src="extern/seedrandom/seedrandom.js"></script>
+
+    <script src="extern/CryptoJS/components/core.js"></script>
+    <script src="extern/CryptoJS/components/enc-base64.js"></script>
+    <script src="extern/CryptoJS/components/cipher-core.js"></script>
+    <script src="extern/CryptoJS/components/aes.js"></script>
+    <script src="extern/CryptoJS/components/sha1.js"></script>
+    <script src="extern/CryptoJS/components/hmac.js"></script>
+    <script src="extern/CryptoJS/components/pbkdf2.js"></script>
+
+    <script src="template/template.js"></script>
+
+    <script src="js/namespace.js"></script>
+    <script src="js/fielddef.js"></script>
+
+    <script src="js/backend/file.js"></script>
+    <script src="js/backend/dropbox.js"></script>
+
+    <script src="js/model/entry.js"></script>
+    <script src="js/model/page.js"></script>
+    <script src="js/model/app_state.js"></script>
+
+    <script src="js/view/fill.js"></script>
+    <script src="js/view/link.js"></script>
+    <script src="js/view/unlocked.js"></script>
+    <script src="js/view/locked.js"></script>
+    <script src="js/view/page.js"></script>
+    <script src="js/view/entry.js"></script>
+
+    <script src="js/lock.js"></script>
+    <script src="js/extension.js"></script>
+    <script src="js/handlebars.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/app.js"></script>
+
+    <script id="cryptobox-json" type="application/json">
+{
+  "pbkdf2_salt": "LovTavFcUnI=",
+  "pbkdf2_iter": 2000,
+  "aes_iv": "W7DqwOVufRepmVPTs8KuGw==",
+  "aes_keylen": 128,
+  "format_version": 7,
+  "version": "2.0",
+  "timestamp": "2013-03-11T13:25:41+04:00",
+  "ciphertext": "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"
+}
+    </script>
+  </head>
+  <body>
+    <noscript>Sorry, this thing heavily depends on JavaScript.</noscript>
+
+    <div id="content">
+    </div>
+
+    <div id="footer" class="navbar navbar-fixed-bottom">
+      <p>
+        <a href="https://github.com/fomichev/cryptobox">Cryptobox v2</a>
+        &copy;
+        <a href="mailto:s@fomichev.me">Fomichev Stanislav</a>
+      </p>
+    </div>
+  </body>
+</html>

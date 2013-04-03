@@ -1,0 +1,11 @@
+.DS_Store
+
+sample/cryptobox/backup/
+
+Gemfile.lock
+.bundle/
+
+font/
+tmp/
+doc/
+pkg/

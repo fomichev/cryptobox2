@@ -1,0 +1,20 @@
+<div class="container">
+  <div id="alert" class="alert alert-error"></div>
+
+  <form id="form-unlock" class="form-signin">
+
+    <h2 class="header">{{t 'header-cryptobox'}}</h2>
+
+    <input id="input-password" class="input-block-level" type="password" placeholder="{{t 'input-password'}}">
+
+    <button id="button-unlock" type="submit" class="btn" data-loading-text="{{t 'button-unlock-loading'}}">
+      <i class="icon-lock"></i> {{t 'button-unlock'}}
+    </button>
+
+{{#if_can_unlink}}
+    <button id="button-unlink" class="btn btn-warning">
+      <i class="icon-remove"></i> {{t 'button-unlink'}}
+    </button>
+{{/if_can_unlink}}
+  </form>
+</div>

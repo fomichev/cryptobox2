@@ -1,0 +1,158 @@
+#alert {
+	margin-top: 10px;
+	display: none;
+}
+
+#input-password-length {
+	width: 20px;
+}
+
+.form-signin {
+	padding: 19px 29px 29px;
+	margin: 40px auto 20px;
+	max-width: 300px;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+	margin-bottom: 10px;
+}
+.form-signin h2 {
+	text-align: left;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+	font-size: 16px;
+	height: auto;
+	margin-bottom: 15px;
+	padding: 7px 9px;
+}
+
+#footer {
+	text-align: center;
+}
+
+body {
+  min-width: 400px;
+  font-family: 'Open Sans', sans-serif;
+  background: url(../light_wool.png) top left repeat;
+  padding-top: 20px !important;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #333333;
+}
+
+.menu, .details
+{
+  background-color: rgb(251, 251, 251);
+  border-radius: 3px 3px 3px 3px;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+.menu {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12pt;
+  padding: 0px;
+}
+
+.menu ul {
+  margin: 0px;
+  padding: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.menu li {
+  padding: 0px;
+
+  list-style: none;
+}
+
+.menu li a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header {
+  font-family: 'Fredoka One', cursive;
+  font-size: 28pt;
+}
+
+hr {
+  color: #ebebeb;
+  background-color: #ebebeb;
+  height: 1px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+li.active {
+  background: #eeeeee !important;
+}
+
+li.separator {
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #999999;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+li a {
+  display: block;
+  color: #333333;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+li a:hover {
+  text-decoration: none !important;
+  color: #333333;
+  background: #eeeeee !important;
+}
+
+.details td {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.details td.heading {
+  text-align: right;
+  font-weight: bold;
+}
+
+.details td.monospace {
+  font-family: monospace;
+}
+
+#input-filter {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  width: 90%;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Fredoka One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Fredoka One'), local('FredokaOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/fredokaone/v1/SL0aFUFfkFMMdariYQ3_YYbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}

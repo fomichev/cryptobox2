@@ -1,0 +1,3 @@
+find_exclude 'portable.html'
+find_exclude 'extern/*'
+find_exclude 'sample/*'

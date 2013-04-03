@@ -1,0 +1,148 @@
+{
+  "site": [
+    {
+      "url": "https://facebook.com",
+      "user": "facebook@facebook.org",
+      "pass": "facebook"
+    },
+    {
+      "url": "https://twitter.com",
+      "user": "example@example.org",
+      "pass": "example"
+    },
+    {
+      "url": "https://dropbox.com",
+      "user": "example@dropbox.com",
+      "pass": "password"
+    },
+    {
+      "url": "http://appleid.apple.com",
+      "user": "example@gmail.com",
+      "pass": "password",
+      "favorite": true
+    },
+    {
+      "url": "http://gmail.com",
+      "user": "example@gmail.com",
+      "pass": "password",
+      "group": "Mail"
+    },
+    {
+      "url": "http://gmail.com",
+      "user": "example@example.com",
+      "pass": "password",
+      "group": "Mail"
+    },
+    {
+      "url": "http://example.org",
+      "name": "strange form that requires something besides user and pass",
+      "note": "rework linkage between user/pass and particular field",
+      "user": "username",
+      "pass": "password",
+      "fields":
+      {
+        "field1": "{{user}}",
+        "field2": "{{pass}}",
+        "field3": "value3"
+      }
+    }
+  ],
+  "account-ftp": [
+    {
+      "host": "example.org",
+      "user": "example",
+      "pass": "password"
+    }
+  ],
+  "account-mail": [
+    {
+      "host": "example.org",
+      "smtp": "smtp.example.org",
+      "imap": "imap.example.org",
+      "user": "example",
+      "pass": "password",
+      "favorite": true
+    }
+  ],
+  "account-ssh": [
+    {
+      "host": "example.org",
+      "user": "example",
+      "pass": "password"
+    }
+  ],
+  "identity": [
+    {
+      "firstname": "John",
+      "lastname": "Smith",
+      "passport": "Password details",
+      "country": "US",
+      "address1": "Address details",
+      "attachments": {
+         "passport.png": "",
+         "driving_licence.png": ""
+      }
+    },
+    {
+      "firstname": "Another",
+      "country": "UK",
+      "address1": "Address details"
+    }
+  ],
+  "note": [
+    {
+      "name": "Cory Doctorow: Down and Out in the Magic Kingdom",
+      "note": "I lived long enough to see the cure for death; to see the rise of the Bitchun Society, to learn ten languages; to compose three symphonies; to realize my boyhood dream of taking up residence in Disney World; to see the death of the workplace and of work."
+    },
+    {
+      "name": "Another fragment from the same book",
+      "note": "Some duration into my foray, he cocked his head at me and raised a sun-bleached eyebrow. \"You get any closer, son, and we're going to have to get a pre-nup.\"\\n\\nI was apparent forty or so, and I thought about bridling at being called son, but I looked into his eyes and decided that he had enough realtime that he could call me son anytime he wanted. I backed off a little and apologized."
+    }
+  ],
+  "app": [
+    {
+      "name": "Microsoft Office",
+      "key": "1234-5678-1234-5678",
+      "favorite": true
+    },
+    {
+      "name": "Microsoft Windows 95",
+      "key": "1234-5678-1234-5678"
+    }
+  ],
+  "card": [
+    {
+      "name": "Bank of America",
+      "cardholder": "Jonh Smith",
+      "number": "1234 5678 9012 3456",
+      "pin": "1234",
+      "cvv": "123"
+    },
+    {
+      "name": "AmericanExpress",
+      "cardholder": "Jonh Smith",
+      "number": "1234 5678 9012 3456",
+      "pin": "1234",
+      "cvv": "123"
+    },
+    {
+      "name": "Deutsche Bank",
+      "cardholder": "Jonh Smith",
+      "number": "1234 5678 9012 3456",
+      "pin": "1234",
+      "cvv": "123"
+    }
+  ],
+  "bookmark": [
+    {
+      "name": "Google",
+      "url": "http://google.com",
+      "note": "Google search"
+    },
+    {
+      "name": "Yahoo",
+      "url": "http://yahoo.com",
+      "note": "Yahoo search"
+    }
+  ]
+}

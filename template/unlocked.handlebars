@@ -1,0 +1,131 @@
+<div>
+  <div class="row-fluid">
+    <div class="span12">
+      <div>
+        <span class="header">{{t 'header-cryptobox'}}</span>
+
+        <div class="btn-group pull-right">
+          <a class="btn" href="#!/locked" id="button-lock"><i class="icon-lock"></i> {{t 'button-lock'}}</a>
+          <button class="btn dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a id="button-generate-show">{{t 'button-generate'}}</a></li>
+            <li><a id="button-acknowledgments-show">{{t 'button-acknowledgments'}}</a></li>
+          </ul>
+        </div>
+      <div class="row-fluid">
+        {{#if_not_extension}}
+        <div class="menu span2 page-list-root"></div>
+        {{/if_not_extension}}
+
+        <div class="menu span4 entry-list-root fill-list-root"></div>
+
+        {{#if_not_extension}}
+        <div class="details span6 entry-root"></div>
+        {{/if_not_extension}}
+      </div>
+    </div>
+  </div>
+
+  <div id="generate" class="modal hide fade">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3>{{t 'title-generate'}}</h3>
+    </div>
+    <div class="modal-body">
+      <form>
+        <label>
+          {{t 'label-password-length'}}
+          <input type="text" id="input-password-length" value="16" />
+        </label>
+        <label class="checkbox inline">
+          <input type="checkbox" id="input-include-num" checked />
+          {{t 'label-password-numbers'}}
+        </label>
+        <label class="checkbox inline">
+          <input type="checkbox" id="input-include-punc" />
+          {{t 'label-password-punctuation'}}
+        </label>
+        <label class="checkbox inline">
+          <input type="checkbox" id="input-include-uc" checked />
+          {{t 'label-password-upper-case'}}
+        </label>
+      </form>
+      <label>
+        {{t 'label-password-result'}}
+        <input type="text" id="input-generated-password" size="30" />
+      </label>
+    </div>
+    <div class="modal-footer">
+      <a id="button-generate-close" href="#" class="btn" data-dismiss="modal" aria-hidden="true">{{t 'button-close'}}</a>
+      <a id="button-generate" href="#" class="btn btn-primary">{{t 'button-generate'}}</a>
+    </div>
+  </div>
+
+  <div id="acknowledgments" class="modal hide fade">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3>{{t 'title-acknowledgments'}}</h3>
+    </div>
+    <div class="modal-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>License</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a target="_blank" href="http://somerandomdude.com/work/iconic/">Iconic</a></td>
+            <td>CC BY-SA 3.0</td>
+          </tr>
+          <tr>
+            <td><a target="_blank" href="http://subtlepatterns.com/light-wool/">Background</a></td>
+            <td>CC BY-SA 3.0</td>
+          </tr>
+          <tr>
+            <td><a target="_blank" href="https://code.google.com/p/crypto-js/">CryptoJS 3.0.2</a></td>
+            <td>New BSD License</td>
+          </tr>
+          <tr>
+            <td><a target="_blank" href="http://davidbau.com/archives/2010/01/30/random_seeds_coded_hints_and_quintillions.html">Random Seed 2.0</a></td>
+            <td>BSD</td>
+          </tr>
+          <tr>
+            <td><a target="_blank" href="http://backbonejs.org">Backbone.js 0.9.10</a></td>
+            <td>MIT</td>
+          </tr>
+          <tr>
+            <td><a target="_blank" href="http://underscorejs.org">Underscore.js 1.4.4</a></td>
+            <td>MIT</td>
+          </tr>
+          <tr>
+            <td><a target="_blank" href="http://jquery.com">jQuery 1.8.3</a></td>
+            <td>MIT</td>
+          </tr>
+          <tr>
+            <td><a target="_blank" href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2.2.2</a></td>
+            <td>Apache License, Version 2.0</td>
+          </tr>
+          <tr>
+            <td><a target="_blank" href="https://github.com/wycats/handlebars.js">Handlebars 1.0.rc.1</a></td>
+            <td>MIT</td>
+          </tr>
+          <tr>
+            <td><a target="_blank" href="https://github.com/mojombo/clippy">Clippy 7329b72360</a></td>
+            <td>MIT</td>
+          </tr>
+          <tr>
+            <td><a target="_blank" href="https://github.com/dropbox/dropbox-js">dropbox-js 0.9.1</a></td>
+            <td>MIT</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="modal-footer">
+      <a id="button-generate-close" href="#" class="btn" data-dismiss="modal" aria-hidden="true">{{t 'button-close'}}</a>
+    </div>
+  </div>
+</div>

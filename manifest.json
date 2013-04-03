@@ -1,0 +1,24 @@
+{
+  "name": "Cryptobox",
+  "minimum_chrome_version": "23",
+  "version": "2.0",
+  "manifest_version": 2,
+  "description": "Cryptobox",
+  "offline_enabled": true,
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "index.html"
+  },
+
+  "background" : {
+    "scripts": [ "js/namespace.js", "js/lock.js", "js/chrome/background.js" ]
+  },
+
+  "permissions": [
+    "tabs",
+    "clipboardWrite",
+    "http://*/*",
+    "https://*/*"
+ ],
+  "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com; object-src 'self'"
+}

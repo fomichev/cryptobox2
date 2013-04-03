@@ -1,0 +1,96 @@
+#!/usr/bin/env ruby
+
+if File.exists?(File.join(File.expand_path('../..', __FILE__), '.git'))
+  $:.unshift(File.expand_path('../../lib', __FILE__))
+end
+
+require 'trollop'
+
+require 'cryptobox'
+
+def desc(cmd, desc, args='')
+  banner "#{desc}\n\nUsage: cryptobox #{cmd}#{cmd ? ' ' : ''}[options] #{args}\n\nOptions:"
+end
+
+global_opts = Trollop::options do
+  version "Cryptobox #{Cryptobox::VERSION} (c) Stanislav Fomichev"
+  desc nil, 'Secure sensitive information manager', '[get|set|create|edit|passwd|encrypt|decrypt] [options]'
+  opt :verbose, 'Be verbose', :short => '-V', :default => false, :short => :none
+  opt :silent, 'Don\'t print any prompts', :short => '-S', :default => false, :short => :none
+  opt :no_interactive, 'Open /dev/tty to read password', :short => :none
+  opt :config, 'Configuration file path', :short => '-c', :type => :string
+  stop_on %w{get set create edit passwd encrypt decrypt}
+end
+
+cmd = ARGV.shift
+cmd_opts = case cmd
+  when "set"
+    Trollop::options do
+      desc cmd, 'Set value for given JSON Path', 'expression value'
+    end
+  when "get"
+    Trollop::options do
+      desc cmd, 'Get value for given JSON Path', 'expression'
+    end
+  when "create"
+    Trollop::options do
+      desc cmd, 'Create new empty database'
+    end
+  when "edit"
+    Trollop::options do
+      desc cmd, 'Edit encrypted database with text editor'
+      opt :stdout, 'Print decrypted data to standard output', :short => :none
+      opt :stdin, 'Read decrypted data from standard input', :short => :none
+      opt :no_pipe, 'Don\'t use named fifo for data exchange with editor', :short => :none
+    end
+  when "passwd"
+    Trollop::options do
+      desc cmd, 'Change database password'
+    end
+  when "encrypt"
+    Trollop::options do
+      desc cmd, 'Encrypt given file and save in the database'
+    end
+  when "decrypt"
+    Trollop::options do
+      desc cmd, 'Decrypt file with given hash and print its data on stdout'
+    end
+  else
+    Trollop::die "unknown subcommand #{cmd.inspect}"
+  end
+
+config = Cryptobox::Config.new(global_opts[:config])
+$verbose = global_opts[:verbose]
+$silent = global_opts[:silent]
+interactive = !global_opts[:no_interactive]
+
+begin
+  case cmd
+  when "get"
+    require 'cryptobox/command/get'
+    Cryptobox::Command.get(config, interactive, ARGV.join)
+  when "set"
+    require 'cryptobox/command/set'
+    Cryptobox::Command.set(config, interactive, ARGV[0], ARGV[1])
+  when "create"
+    require 'cryptobox/command/create'
+    Cryptobox::Command.create(config, interactive)
+  when "edit"
+    require 'cryptobox/command/edit'
+    Cryptobox::Command.edit(config, interactive, cmd_opts[:stdout], cmd_opts[:stdin], !cmd_opts[:no_pipe])
+  when "passwd"
+    require 'cryptobox/command/passwd'
+    Cryptobox::Command.passwd(config, interactive)
+  when "encrypt"
+    require 'cryptobox/command/encrypt'
+    ARGF.binmode
+    Cryptobox::Command.encrypt(config, interactive, ARGF)
+  when "decrypt"
+    require 'cryptobox/command/decrypt'
+    Cryptobox::Command.decrypt(config, interactive, ARGV.join)
+  end
+rescue Cryptobox::Error => error
+  $stdout.flush
+  $stderr.puts "error: #{error.message}!"
+  exit error.code
+end
