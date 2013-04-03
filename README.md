@@ -10,7 +10,7 @@ support for in-HTML editing, I had to port all this logic to JavaScript).
 
 Now, source format of the cryptobox is plain JSON. This still lefts the
 possibility to edit it via external editor (it doesn't look as nice and
-clean as YAML thought, but who cares, edits are rara), but now adds
+clean as YAML thought, but who cares, edits are rare), but now adds
 possibility to easily edit and save it from the HTML application (not yet
 implemented, there is just a possibility).
 Additionally, I removed include files and now support predefined set
@@ -29,9 +29,9 @@ Another differences from original version:
 
 I'll probably convert old README from original version someday and add
 more details here, but for now, the only documentation is code and
-[sample file](https://github.com/fomichev/cryptobox2/sample/sample.json).
+[sample file](https://github.com/fomichev/cryptobox2/blob/master/sample/sample.json).
 Also, there's
-[HTML page](https://github.com/fomichev/cryptobox2/sample/cryptobox/portable.html).
+[HTML page](https://github.com/fomichev/cryptobox2/blob/master/sample/cryptobox/portable.html)
 that has been generated from the sample file.
 
 ## TODO
@@ -45,7 +45,6 @@ that has been generated from the sample file.
 
 ### HTML
 * model -> collection where appropriate
-
 * add more account types
 * ? add tags support
 * add support for attachments in external files (so cryptobox.json doesn't get too big)
